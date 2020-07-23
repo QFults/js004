@@ -6,11 +6,17 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Count: <span id="count">0</span></h1>
   <button id="myBtn">Click Me</button>
   <script>
 
+    let count = 0
+
+    document.getElementById('count').textContent = count
+
     document.getElementById('myBtn').addEventListener('click', () => {
-      console.log('hi')
+      count++
+      document.getElementById('count').textContent = count
     })
 
   </script>
