@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form>
+    <p>
+      <label for="name">name</label>
+      <input type="text" name="name" id="name">
+    </p>
+    <p>
+      <label for="breed">breed</label>
+      <input type="text" name="breed" id="breed">
+    </p>
+    <p>
+      <label for="age">age</label>
+      <input type="number" name="age" id="age">
+    </p>
+    <p>
+      <button id="createDog">Create Dog</button>
+    </p>
+  </form>
+
+  <div id="dog"></div>
+
+  <script>
+
+    document.getElementById('createDog').addEventListener('click', event => {
+      event.preventDefault()
+
+      document.getElementById('dog').innerHTML = `
+        <p>Name: ${document.getElementById('name').value}</p>
+        <p>Breed: ${document.getElementById('breed').value}</p>
+        <p>Age: ${document.getElementById('age').value}</p>
+      `
+
+      document.getElementById('name').value = ''
+      document.getElementById('breed').value = ''
+      document.getElementById('age').value = ''
+    })
+
+  </script>
+</body>
+</html>

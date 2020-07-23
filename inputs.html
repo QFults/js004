@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form>
+    <p>
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+    </p>
+    <p>
+      <label for="password">password</label>
+      <input type="password" name="password" id="password">
+    </p>
+    <p>
+      <button id="signIn">Sign In</button>
+    </p>
+  </form>
+
+  <div id="user"></div>
+  
+  <script>
+
+    document.getElementById('signIn').addEventListener('click', event => {
+      event.preventDefault()
+      console.log(document.getElementById('email').value)
+      console.log(document.getElementById('password').value)
+      document.getElementById('user').innerHTML = `
+        <p>Email: ${document.getElementById('email').value}</p>
+        <p>Password: ${document.getElementById('password').value}</p>
+      `
+      document.getElementById('email').value = ''
+      document.getElementById('password').value = ''
+    })
+
+  </script>
+</body>
+</html>
